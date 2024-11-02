@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Riche Haine - Graphic Design & Photography</title>
     <style>
-        /* Colors */
+        /* Color Palette */
         :root {
+            --beige: #f4efd9; /* Beige background color */
             --deep-red: #750708;
             --royal-blue: #4b619b;
-            --cream: #f4efd9;
             --dark-brown: #27241e;
             --black: #000000;
         }
 
-        /* Basic CSS Reset */
+        /* Basic Reset */
         * {
             margin: 0;
             padding: 0;
@@ -23,64 +23,81 @@
         }
 
         body {
-            background-color: var(--dark-brown);
-            color: var(--cream);
-            font-family: 'Helvetica Neue', sans-serif;
+            background-color: var(--beige);
+            color: var(--dark-brown);
+            line-height: 1.6;
+        }
+
+        /* Container for centering content */
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px 0;
         }
 
         /* Header */
         header {
-            background-color: var(--deep-red);
-            padding: 20px;
             text-align: center;
+            padding: 40px 0;
         }
 
-        h1 {
-            font-size: 3em;
-            color: var(--cream);
+        header h1 {
+            font-size: 2.5em;
             font-family: 'Brush Script MT', cursive;
+            color: var(--deep-red);
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2em;
+            color: var(--dark-brown);
         }
 
         /* Navigation */
         nav {
-            background-color: var(--black);
-            padding: 10px;
             text-align: center;
+            margin: 20px 0;
         }
 
         nav a {
-            color: var(--cream);
+            color: var(--dark-brown);
             text-decoration: none;
-            padding: 10px 20px;
-            font-size: 1.2em;
+            font-size: 1em;
+            margin: 0 15px;
+            padding: 5px 10px;
+            transition: color 0.3s ease;
         }
 
         nav a:hover {
-            color: var(--royal-blue);
+            color: var(--deep-red);
         }
 
-        /* Main Content */
+        /* Sections */
+        section {
+            padding: 60px 0;
+        }
+
+        /* Gallery */
         .gallery {
-            display: flex;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
-            padding: 20px;
-            justify-content: center;
         }
 
         .gallery-item {
-            width: 300px;
-            height: 300px;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
             perspective: 1000px;
         }
 
-        .gallery-item .flip-card {
+        .flip-card {
             width: 100%;
             height: 100%;
-            position: relative;
-            text-align: center;
             transition: transform 0.8s;
             transform-style: preserve-3d;
+            position: relative;
         }
 
         .gallery-item:hover .flip-card {
@@ -92,41 +109,51 @@
             width: 100%;
             height: 100%;
             backface-visibility: hidden;
-            border-radius: 10px;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--cream);
-            font-family: 'Helvetica Neue', sans-serif;
+            border-radius: 8px;
         }
 
         .flip-card-front {
             background-color: var(--deep-red);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--beige);
+            font-size: 1.5em;
         }
 
         .flip-card-back {
             background-color: var(--royal-blue);
+            color: var(--beige);
             transform: rotateY(180deg);
-            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            text-align: center;
         }
 
-        .flip-card-back p {
-            font-size: 1em;
+        /* About Section */
+        .about {
+            text-align: center;
+            font-size: 1.1em;
+            color: var(--dark-brown);
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         /* Footer */
         footer {
-            background-color: var(--black);
-            color: var(--cream);
-            padding: 20px;
             text-align: center;
+            padding: 20px;
+            background-color: var(--black);
+            color: var(--beige);
         }
 
         footer a {
-            color: var(--cream);
+            color: var(--beige);
             text-decoration: none;
             margin: 0 10px;
+            transition: color 0.3s ease;
         }
 
         footer a:hover {
@@ -144,44 +171,55 @@
 
     <!-- Navigation -->
     <nav>
-        <a href="#home">Home</a>
-        <a href="#photography">Photography & Design</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#about">About</a>
         <a href="#contact">Contact</a>
     </nav>
 
-    <!-- Main Content -->
-    <main>
-        <!-- Gallery Section -->
-        <section id="photography" class="gallery">
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="container">
+        <h2 class="section-title">Portfolio</h2>
+        <div class="gallery">
+            <!-- Gallery Item 1 -->
             <div class="gallery-item">
                 <div class="flip-card">
                     <div class="flip-card-front">
-                        <img src="your-image1.jpg" alt="Sample Work 1" style="width:100%; height:100%;">
+                        <p>Image 1</p>
                     </div>
                     <div class="flip-card-back">
-                        <p>Description of your first artwork or photograph here. Explain techniques, concepts, etc.</p>
+                        <p>Description of Image 1. Add details about the design or photography here.</p>
                     </div>
                 </div>
             </div>
+            <!-- Gallery Item 2 -->
             <div class="gallery-item">
                 <div class="flip-card">
                     <div class="flip-card-front">
-                        <img src="your-image2.jpg" alt="Sample Work 2" style="width:100%; height:100%;">
+                        <p>Image 2</p>
                     </div>
                     <div class="flip-card-back">
-                        <p>Description of your second artwork or photograph here. Explain techniques, concepts, etc.</p>
+                        <p>Description of Image 2. Explain the concept or technique here.</p>
                     </div>
                 </div>
             </div>
             <!-- Add more gallery items as needed -->
-        </section>
-    </main>
+        </div>
+    </section>
 
-    <!-- Footer -->
+    <!-- About Section -->
+    <section id="about" class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="about">
+            <p>Add a brief introduction about yourself here. Talk about your background in graphic design and photography, your inspirations, or any other relevant information that helps visitors connect with you.</p>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
     <footer id="contact">
         <p>Connect with me on social media:</p>
-        <a href="https://t.me/richehaine> |
-  
+        <a href="https://instagram.com/yourprofile" target="_blank">Instagram</a> |
+        <a href="https://twitter.com/yourprofile" target="_blank">Twitter</a> |
+        <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
     </footer>
 
 </body>
